@@ -52,3 +52,5 @@ jobs:
       run: |
         echo "Running tests..."
         pytest
+    - name: Print Docker logs
+      run: docker logs ${{ job.services.api.id }}
