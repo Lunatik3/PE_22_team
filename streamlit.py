@@ -1,3 +1,7 @@
+# Импорт библиотек
+import streamlit as st
+import requests
+
 # Создание Streamlit приложения
 st.title('Model')
 
