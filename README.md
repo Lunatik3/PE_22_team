@@ -45,7 +45,8 @@ Laboro Tomato можно использовать для решения пере
 
 ### Пример работы приложения
  - Исходное изображение
-<img src="https://github.com/Lunatik3/Project_Team22/assets/147321002/56721004-3d06-44a6-9506-d523c1a91d1d" width="400">
+
+<img src="https://github.com/Lunatik3/PE_22_team/assets/147321002/19467d30-9050-4e42-9d77-32c964080b0d" width="400">
 
  - Результат работы
-<img src="https://github.com/Lunatik3/Project_Team22/assets/147321002/f0ffb8a9-9bd8-45af-b52b-f23c5a8366f0" width="400">
+<img src="https://github.com/Lunatik3/PE_22_team/assets/147321002/9cb199fa-5ee9-4dd8-8850-ee5e32d25dfc" width="400">
