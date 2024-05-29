@@ -1,6 +1,7 @@
 # Импорт библиотек
 import streamlit as st
 import requests
+import uvicorn
 
 # Создание Streamlit приложения
 st.title('Model')
@@ -21,5 +22,5 @@ file = st.file_uploader(label='Загрузите файл', type=['jpeg', 'jpg'
 if file:
     st.button(label='Запустить модель', on_click=get_result, args=(file,))
 
-if __name__ == '__main__':
+if __name__ == '__streamlit__':
     uvicorn.run(host='0.0.0.0', port=8000, app="main:app")
