@@ -35,7 +35,7 @@ model = YOLO(model_path)
 async def run_model(file: UploadFile):
     img = Image.open(file.file)
     results = model.predict(img)
-    result_image_path = f"images/results.jpg"
+    result_image_path = f"images_test/results.jpg"
     results[0].save(filename=result_image_path)
     return FileResponse(result_image_path, media_type="image/jpeg")
 
