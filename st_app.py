@@ -47,9 +47,6 @@ def run_api():
 api_thread = Thread(target=run_api, daemon=True)
 api_thread.start()
 
-# Запуск сервера uvicorn
-if __name__ == '__main__':
-    uvicorn.run(host='0.0.0.0', port=8000, app="main:app")
 
 # Создание Streamlit приложения
 st.title('Model')
@@ -70,6 +67,6 @@ file = st.file_uploader(label='Загрузите файл', type=['jpeg', 'jpg'
 if file:
     st.button(label='Запустить модель', on_click=get_result, args=(file,))
 
-if __name__ == '__main__':
-    uvicorn.run(host='0.0.0.0', port=8000, app="main:app")
+if __name__ == '__st_app__':
+    uvicorn.run(host='0.0.0.0', port=8000, app="st_app:app")
 
