@@ -34,5 +34,3 @@ def test_invalid_file():
         response = client.post("/run_model/", files=files)
     
     assert response.status_code == 422  # Ожидается ошибка из-за неправильного типа файла
-
-# Другие тесты в зависимости от функциональности вашего API
