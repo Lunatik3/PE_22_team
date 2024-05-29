@@ -22,5 +22,5 @@ file = st.file_uploader(label='Загрузите файл', type=['jpeg', 'jpg'
 if file:
     st.button(label='Запустить модель', on_click=get_result, args=(file,))
 
-if __name__ == '__stream_lit__':
+if __name__ == '__main__':
     uvicorn.run(host='0.0.0.0', port=8000, app="main:app")
