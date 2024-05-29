@@ -17,7 +17,7 @@ def setup_model():
 # Тестируем endpoint /run_model/ с изображением
 def test_run_model():
     # Убедитесь, что у вас есть изображение для теста
-    test_image_path = 'test_image.jpg'  # Путь к тестовому изображению
+    test_image_path = 'images_test/test_image.jpg'  # Путь к тестовому изображению
     with open(test_image_path, "rb") as file:
         files = {"file": ("test_image.jpg", file, "image/jpeg")}
         response = client.post("/run_model/", files=files)
@@ -28,7 +28,7 @@ def test_run_model():
 # Дополнительные тесты можно добавить аналогичным образом
 def test_invalid_file():
     # Попытка отправить не изображение
-    invalid_file_path = 'test_invalid.txt'  # Путь к тестовому не изображению
+    invalid_file_path = 'images_test/test_invalid.txt'  # Путь к тестовому не изображению
     with open(invalid_file_path, "rb") as file:
         files = {"file": ("test_invalid.txt", file, "text/plain")}
         response = client.post("/run_model/", files=files)
