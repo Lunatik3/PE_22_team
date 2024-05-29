@@ -1,3 +1,4 @@
+# Импорт библиотек
 import os
 import pytest
 from fastapi.testclient import TestClient
@@ -16,7 +17,6 @@ def setup_model():
 
 # Тестируем endpoint /run_model/ с изображением
 def test_run_model():
-    # Убедитесь, что у вас есть изображение для теста
     test_image_path = 'images_test/test_image.jpg'  # Путь к тестовому изображению
     with open(test_image_path, "rb") as file:
         files = {"file": ("test_image.jpg", file, "image/jpeg")}
@@ -25,7 +25,6 @@ def test_run_model():
     assert response.status_code == 200
     assert response.headers["content-type"] == "image/jpeg"
 
-# Дополнительные тесты можно добавить аналогичным образом
 @pytest.mark.xfail(reason='Намеренный провал')
 def test_invalid_file():
     # Попытка отправить не изображение
