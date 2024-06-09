@@ -43,9 +43,9 @@ jobs:
       env:
         GITLAB_TOKEN: ${{ secrets.GITLAB_TOKEN }}
       run: |
-        git remote add gitlab https://gitlab.com/team_222/mlops_pr.git
+        git config --global user.email "mvm0519@gmail.com"
+        git config --global user.name "Lunatik3"
+        git remote add gitlab https://oauth2:${{ secrets.GITLAB_TOKEN }}@gitlab.com/team_222/mlops_pr.git
         git fetch gitlab
-        git checkout main
-        git reset --hard origin/main
         git push -u gitlab main
 
