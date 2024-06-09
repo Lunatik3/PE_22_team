@@ -1,8 +1,9 @@
 FROM python:3.10
-EXPOSE 8000
 WORKDIR /app
-COPY requirements.txt ./requirements.txt
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-CMD uvicorn main:app --reload --port 8000 
-CMD streamlit run st_app.py
+RUN apt-get update && apt-get install -y libgl1-mesa-glx
+EXPOSE 80
+EXPOSE 8000
+CMD ["python", "st_app.py"]
