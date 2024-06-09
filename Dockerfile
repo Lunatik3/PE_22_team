@@ -1,5 +1,6 @@
-FROM python:3.8
-COPY . /app
+FROM python:3.10-slim
 WORKDIR /app
-RUN pip3 install -r requirements.txt
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
 CMD streamlit run st_app.py
