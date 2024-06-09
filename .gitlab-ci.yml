@@ -1,0 +1,20 @@
+stages:
+  - lint
+  - test
+
+variables:
+  PYTHON_VERSION: "3.10"
+
+lint:
+  stage: lint
+  image: python:3.10
+  script:
+    - pip install flake8
+    - flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+
+test:
+  stage: test
+  image: python:3.10
+  script:
+    - pip install pytest
+    - pytest
