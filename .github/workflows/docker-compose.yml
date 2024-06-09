@@ -1,0 +1,6 @@
+version: "1"
+services:
+  st_app:
+    build: .
+    ports:
+      - "8000:8000"
