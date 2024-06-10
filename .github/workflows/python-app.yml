@@ -63,28 +63,3 @@ jobs:
         docker stop my-running-app
         docker rm my-running-app
         
-    - name: Configure Git
-      run: |
-        git config --global user.email "sattarov9@gmail.com"
-        git config --global user.name "SArtemA"
-
-    - name: Setup SSH
-      uses: webfactory/ssh-agent@v0.5.3
-      with:
-        ssh-private-key: ${{secrets.GITLAB_SSH_KEY}}
-
-    - name: Add GitLab SSH key
-      run: |
-        ssh-keyscan -H gitlab.com >> ~/.ssh/known_hosts
-
-    - name: Add GitLab remote
-      run: |
-        git remote add gitlab git@gitlab.com:team_222/mlops_pr.git
-
-    - name: Fetch from GitLab
-      run: |
-        git fetch gitlab
-
-    - name: Push to GitLab
-      run: |
-        git push -u gitlab main
